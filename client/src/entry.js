@@ -13,6 +13,8 @@
 
   function handleSubmit(e){
     e.preventDefault();
+    clearTable();
+    toggleLoading();
     var n = +queryInput.value;
     getWords(n)
       .then(function(data){
@@ -50,6 +52,13 @@
     while (results.firstChild) {
       results.removeChild(results.firstChild);
     }
+  }
+
+  // Loading spinner
+  function toggleLoading(){
+    var img = document.createElement('img');
+    img.src = 'assets/ellipsis.svg';
+    results.appendChild(img);
   }
 
   // AJAX stuff
