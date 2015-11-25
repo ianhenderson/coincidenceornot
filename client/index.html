@@ -2,29 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hey</title>
-    <link rel="stylesheet" href="public/style.css" media="screen" charset="utf-8">
+    <title>Coincidence Or Not???</title>
+    <link rel="stylesheet" href="src/style.css" media="screen" charset="utf-8">
   </head>
   <body>
     <!-- Picture -->
     <img src="assets/coincidence.png" alt="" />
     <!-- Voting -->
-    <section class="vote">
-      <button type="button" data-value="1" name="button">Yes, it is</button>
-      <button type="button" data-value="0" name="button">No, it isn't</button>
+    <section id="vote">
+      <h2> What do you think? </h2>
+      <div class="buttonbox">
+        <button type="button" data-value="1" name="button">Yes, it is</button>
+        <button type="button" data-value="0" name="button">No, it isn't</button>
+      </div>
     </section>
     <!-- Voting Results -->
-    <section class="vote-results">
+    <section id="vote-results">
+      <h2>Vote Results:</h2>
       <div class="vote-yes"> </div>
       <div class="vote-no"> </div>
     </section>
     <!-- Query for words -->
-    <section class="querybox">
-      <div class="queryTitle">
-        Yup, I thought so too...How many words match?
+    <form id="queryBox">
+      <div>
+        What words do add up to
+        <input type="text" autofocus id="queryInput" name="queryInput" value="100" size="3" placeholder="Type">
+        %...?
+        <button type="submit" form="queryBox" name="button">Tell me!</button>
       </div>
-      <input type="text" name="queryInput" value="">
+    </form>
+    <!-- Results of query -->
+    <section id="results">
+      <table>
+        <thead> </thead>
+        <tbody> </tbody>
+      </table>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/2.0.5/reqwest.min.js" charset="utf-8"></script>
+    <script src="src/entry.js" charset="utf-8"></script>
   </body>
 </html>

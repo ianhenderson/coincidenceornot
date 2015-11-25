@@ -1,0 +1,42 @@
+img {
+  max-width: 600px;
+  width: 100%;
+}
+h2 {
+  text-align: center;
+}
+section {
+  /*border: 1px dotted #9300FF;*/
+  margin: .2em;
+  padding: .2em;
+}
+.buttonbox {
+  display: flex;
+  max-width: 600px;
+}
+
+.buttonbox button {
+  flex: auto;
+  height: 5em;
+}
+
+#vote {
+  display: none;
+}
+
+#vote-results {
+  display: none;
+}
+
+#queryBox * {
+  /*text-align: center;*/
+}
+
+#queryBox * {
+  font-size: 24px;
+}
+
+#results {
+  /*visibility: hidden;*/
+
+}
