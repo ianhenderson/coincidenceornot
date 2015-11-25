@@ -1,10 +1,7 @@
 var fs = require('fs');
-var words;
-var wordsBulk = fs.readFile(__dirname + '/words', 'utf8', function(err, data){
-  if (err) console.error(err);
-  words = data.split(/\r|\n|\f/);
-  console.log(words);
-});
+var wordsBulk = fs.readFileSync(__dirname + '/words', 'utf8');
+var words = wordsBulk.split(/\r|\n|\f/);
+var cache = {};
 var map = {
   "a": 1,
   "b": 2,
@@ -33,7 +30,6 @@ var map = {
   "y": 25,
   "z": 26,
 };
-var cache = {};
 
 function calculateValue(word){
   return [
