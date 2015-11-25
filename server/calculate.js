@@ -2,7 +2,7 @@ var fs = require('fs');
 var words;
 var wordsBulk = fs.readFile(__dirname + '/words', 'utf8', function(err, data){
   if (err) console.error(err);
-  words = data.split('\n');
+  words = data.split(/\r|\n|\f/);
   console.log(words);
 });
 var map = {
