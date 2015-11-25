@@ -42,7 +42,7 @@
   function attachItems(el, data) {
     return data.reduce(function(el, datum){
       var li = document.createElement('li');
-      li.innerText = datum;
+      addText(li, datum);
       el.appendChild(li);
       return el;
     }, el);
@@ -59,6 +59,11 @@
     var img = document.createElement('img');
     img.src = 'assets/ellipsis.svg';
     results.appendChild(img);
+  }
+
+  // crossbrowser stuff
+  function addText(el, content){
+    el.innerText = el.textContent = content;
   }
 
   // AJAX stuff
