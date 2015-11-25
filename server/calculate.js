@@ -1,6 +1,10 @@
 var fs = require('fs');
-var wordsBulk = fs.readFileSync(__dirname + '/words', 'utf8');
-var words = wordsBulk.split('\n');
+var words;
+var wordsBulk = fs.readFile(__dirname + '/words', 'utf8', function(err, data){
+  if (err) console.error(err);
+  words = data.split('\n');
+  console.log(words);
+});
 var map = {
   "a": 1,
   "b": 2,
